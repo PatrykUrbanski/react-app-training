@@ -20,3 +20,18 @@ export const fetchData = async () => {
         
     }
 };
+
+export const fetchDailyData = async () => {
+    try {
+        const {data}= await axios.get(`${url}/daily`); //get daily dat for a chart so we call it in the chart file
+        const modifiedData = data.map((dailyData) => ({
+            confirmed: dailyData.confirmed.total,
+            deaths: dailyData.deaths.total,
+            date: dailyData.reportDate,
+        }));
+        //above- getting data we need from whole data and put into object
+        return modifiedData
+    }catch (error) {
+        
+    }
+}
