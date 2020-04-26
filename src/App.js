@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 //
 // import Cards from "./components/Cards/Cards";
 // import Chart from "./components/Chart/Chart";
@@ -8,7 +8,7 @@ import { Cards, Chart, CountryPicker } from './components'; // it works, cause i
 import styles from './App.module.css';  //imported basic styles
 import {fetchData} from "./api";    // function to get data
 
-class App extends Component {
+class App extends React.Component {
     //creating the state to be able to using data from fetchData in files Cards, CountryPicker etc, state is something like constructor
     state = {
         data: {},   //created empty object to populate later, when we call the function to get api data
